@@ -1,3 +1,13 @@
+/**
+ * @name JetBrainsMono Nerd Font Theme
+ * @author NikSne
+ * @authorId 760511113795207168
+ * @version 0.2.0
+ * @description Set JetBrainsMono Nerd Font as the main Discord font
+ * @website https://niksne.ru
+ * @invite hGxQgrYTD3 
+ **/
+
 body {
-  font-family: JetBrainsMono Nerd Font;
+    font-family: JetBrainsMono Nerd Font;
 }
