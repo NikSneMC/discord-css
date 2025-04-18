@@ -1,0 +1,86 @@
+/**
+ * @name Make Discord UI great again
+ * @author NikSne
+ * @authorId 760511113795207168
+ * @version 0.2.0
+ * @description Makes Discord's "Visual Refresh" less annoying
+ * @website https://github.com/NikSneMC/discord-css
+ * @invite hGxQgrYTD3 
+ **/
+
+/* REMOVE THIS ANNOYING TITLE BAR */
+@import url('https://raw.githubusercontent.com/surgedevs/visual-refresh-compact-title-bar/refs/heads/main/browser.css');
+
+/* REVERT SERVER LIST CHANGES */
+@import url("https://scattagain.github.io/VencordStuff/css/GuildbarRevert.css");
+
+:root {
+    /* Only include this part if you wish to change these variables */
+    /* You can change the size but only to be less than 48px, you must change the blob scale too */
+    --guildbar-avatar-size: 48px;
+    --blob-scale: 48;
+
+    --guildbar-folder-size: var(--guildbar-avatar-size);
+    --folder-blob-scale: var(--blob-scale);
+}
+
+/* STOP USER SPACE FROM OVERFLOWING SERVER LIST */
+.visual-refresh section.panels_c48ade {
+    left: calc(var(--custom-guild-list-width) + var(--space-xs));
+    width: calc(100% - var(--custom-guild-list-width) - var(--space-xs)*2);
+    box-sizing: content-box;
+
+    .actionButtons_e131a9 button {
+        padding: 0;
+    }
+
+    /* GameActivityToggle Fix (delete if you don't use) */
+    .container__37e49 {
+        padding: var(--space-xxs);
+        gap: var(--space-4);
+
+        >.buttons__37e49 {
+            gap: 0;
+        }
+
+        >.avatarWrapper__37e49 {
+            min-width: 32px !important;
+
+            >.avatar__37e49 {
+                scale: 0.9;
+            }
+        }
+    }
+}
+
+nav.guilds_c48ade {
+    margin-bottom: 0 !important;
+}
+
+.sidebar_c48ade:after {
+    display: none;
+}
+
+/* MAKE TIMESTAMPS SHOW "TODAY" AGAIN */
+span[class*="timestampInline_"] time::before {
+    content: attr(aria-label);
+    font-size: 12px;
+}
+
+span[class*="timestampInline_"] {
+    font-size: 0px !important;
+}
+
+/* REMOVE ACTIVITY FROM THE MEMBERLIST */
+[class*='membersGroup']:has([role=button]),
+[class*='member'] [class*='container']:has([class*='badges']) {
+    display: none;
+}
+
+/* REMOVE QUICK REACT BAR */
+.button_f7ecac.hoverBarButton_f84418:nth-of-type(1),
+.button_f7ecac.hoverBarButton_f84418:nth-of-type(2),
+.button_f7ecac.hoverBarButton_f84418:nth-of-type(3),
+.separator_f84418 {
+    display: none;
+}
