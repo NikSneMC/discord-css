@@ -11,19 +11,6 @@
 /* REMOVE THIS ANNOYING TITLE BAR */
 @import url('https://raw.githubusercontent.com/surgedevs/visual-refresh-compact-title-bar/refs/heads/main/browser.css');
 
-/* REVERT SERVER LIST CHANGES */
-@import url("https://scattagain.github.io/VencordStuff/css/GuildbarRevert.css");
-
-:root {
-    /* Only include this part if you wish to change these variables */
-    /* You can change the size but only to be less than 48px, you must change the blob scale too */
-    --guildbar-avatar-size: 48px;
-    --blob-scale: 48;
-
-    --guildbar-folder-size: var(--guildbar-avatar-size);
-    --folder-blob-scale: var(--blob-scale);
-}
-
 /* STOP USER SPACE FROM OVERFLOWING SERVER LIST */
 .visual-refresh section.panels_c48ade {
     left: calc(var(--custom-guild-list-width) + var(--space-xs));
